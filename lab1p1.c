@@ -169,20 +169,21 @@ int main(void)
 	PR1 = 288;
 /*************************************Timer3 for Stopwatch**********************/
 	
-    //Set Timer 3's prescaler to 1:256
-    T1CONbits.TCKPS1 = 1;
-	T1CONbits.TCKPS0 = 1;
-    IEC0bits.T3IE = 1; // enable interrupt for Timer1
-	PR3 = 576; // Timer 3's period value regsiter to value for 10 ms.
-	T3CONbits.TON = 0;	// Set Timer 3 to be initially off.
-    TMR3 = 0; // Clear Timer 1 value      
-    IFS0bits.T3IF = 0; // reset interrupt flag for Timer1
+//Set Timer 3's prescaler to 1:256
+T1CONbits.TCKPS1 = 1;
+T1CONbits.TCKPS0 = 1;
+IEC0bits.T3IE = 1; // enable interrupt for Timer1
+PR3 = 576; // Timer 3's period value regsiter to value for 10 ms.
+T3CONbits.TON = 0;	// Set Timer 3 to be initially off.
+TMR3 = 0; // Clear Timer 1 value      
+IFS0bits.T3IF = 0; // reset interrupt flag for Timer1
     
 /***************************************CN Interrupt****************************/
-    CNEN1bits.CN6IE = 1;
-	CNEN2bits.CN27IE = 1; // CN interrupt for RB5 (reset)
-    IEC1bits.CNIE = 1; // Enable CN interrupt
-    IFS1bits.CNIF = 0; //clear flag
+ 
+CNEN1bits.CN6IE = 1;
+CNEN2bits.CN27IE = 1; // CN interrupt for RB5 (reset)
+IEC1bits.CNIE = 1; // Enable CN interrupt
+IFS1bits.CNIF = 0; //clear flag
 
 /****************************************Inititialize***************************/
 LCDInitialize(); // Initialize LCD
