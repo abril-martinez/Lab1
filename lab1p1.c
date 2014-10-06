@@ -47,7 +47,7 @@ void Debounce_Delay(void)
 	  IFS0bits.T1IF = 0; // reset flag
      }
 
-/********************************************Functions**************************************/
+/***************************************StopWatch***Functions********************************/
 void sw_reset()
        {
          if(state == 2); // timer currently running, ignore reset
