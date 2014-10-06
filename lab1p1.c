@@ -223,10 +223,6 @@ while(1)
  long int sw_cnt;
  if(state == 2)
   {
-       //     LCDMoveCursor(1,7);
-         //   sw_cnt
-           // LCDPrintChar(cnt + '0'); // update 1/100 sec
-
      	    if(count%10 == 0)
 			 {
               sw_cnt = (count/10)%10; 
