@@ -143,8 +143,6 @@ int main(void)
  	// TODO: Set Timer 1 to be initially off.
 	T1CONbits.TON = 0;
 
-	// **could have used T1CON = 0x0030** 
-
 	// TODO: Clear Timer 1 value and reset interrupt flag
     TMR1 = 0;       
     IFS0bits.T1IF = 0; // reset interrupt flag for Timer1
